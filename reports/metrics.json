@@ -1,0 +1,148 @@
+{
+  "metrics": {
+    "Logistic Regression": {
+      "Accuracy": 0.8152173913043478,
+      "Precision": 0.8269230769230769,
+      "Recall": 0.8431372549019608,
+      "F1": 0.8349514563106796,
+      "ROC-AUC": 0.8944285031085605,
+      "Specificity": 0.7804878048780488
+    },
+    "Random Forest": {
+      "Accuracy": 0.8043478260869565,
+      "Precision": 0.8173076923076923,
+      "Recall": 0.8333333333333334,
+      "F1": 0.8252427184466019,
+      "ROC-AUC": 0.9039933046389288,
+      "Specificity": 0.7682926829268293
+    },
+    "XGBoost": {
+      "Accuracy": 0.8315217391304348,
+      "Precision": 0.8141592920353983,
+      "Recall": 0.9019607843137255,
+      "F1": 0.8558139534883721,
+      "ROC-AUC": 0.8984935437589671,
+      "Specificity": 0.7439024390243902
+    }
+  },
+  "confusion_matrices": {
+    "Logistic Regression": [
+      [
+        64,
+        18
+      ],
+      [
+        16,
+        86
+      ]
+    ],
+    "Random Forest": [
+      [
+        63,
+        19
+      ],
+      [
+        17,
+        85
+      ]
+    ],
+    "XGBoost": [
+      [
+        61,
+        21
+      ],
+      [
+        10,
+        92
+      ]
+    ]
+  },
+  "classification_reports": {
+    "Logistic Regression": {
+      "No Heart Disease": {
+        "precision": 0.8,
+        "recall": 0.7804878048780488,
+        "f1-score": 0.7901234567901234,
+        "support": 82.0
+      },
+      "Heart Disease": {
+        "precision": 0.8269230769230769,
+        "recall": 0.8431372549019608,
+        "f1-score": 0.8349514563106796,
+        "support": 102.0
+      },
+      "accuracy": 0.8152173913043478,
+      "macro avg": {
+        "precision": 0.8134615384615385,
+        "recall": 0.8118125298900047,
+        "f1-score": 0.8125374565504015,
+        "support": 184.0
+      },
+      "weighted avg": {
+        "precision": 0.8149247491638796,
+        "recall": 0.8152173913043478,
+        "f1-score": 0.8149737608721709,
+        "support": 184.0
+      }
+    },
+    "Random Forest": {
+      "No Heart Disease": {
+        "precision": 0.7875,
+        "recall": 0.7682926829268293,
+        "f1-score": 0.7777777777777778,
+        "support": 82.0
+      },
+      "Heart Disease": {
+        "precision": 0.8173076923076923,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.8252427184466019,
+        "support": 102.0
+      },
+      "accuracy": 0.8043478260869565,
+      "macro avg": {
+        "precision": 0.8024038461538461,
+        "recall": 0.8008130081300813,
+        "f1-score": 0.8015102481121898,
+        "support": 184.0
+      },
+      "weighted avg": {
+        "precision": 0.8040238294314382,
+        "recall": 0.8043478260869565,
+        "f1-score": 0.8040898644528869,
+        "support": 184.0
+      }
+    },
+    "XGBoost": {
+      "No Heart Disease": {
+        "precision": 0.8591549295774648,
+        "recall": 0.7439024390243902,
+        "f1-score": 0.7973856209150327,
+        "support": 82.0
+      },
+      "Heart Disease": {
+        "precision": 0.8141592920353983,
+        "recall": 0.9019607843137255,
+        "f1-score": 0.8558139534883721,
+        "support": 102.0
+      },
+      "accuracy": 0.8315217391304348,
+      "macro avg": {
+        "precision": 0.8366571108064316,
+        "recall": 0.8229316116690579,
+        "f1-score": 0.8265997872017024,
+        "support": 184.0
+      },
+      "weighted avg": {
+        "precision": 0.8342116957226237,
+        "recall": 0.8315217391304348,
+        "f1-score": 0.8297752400589491,
+        "support": 184.0
+      }
+    }
+  },
+  "best_model": "Logistic Regression",
+  "selection_method": "Lowest mean rank across accuracy, precision, recall, F1, ROC-AUC and specificity (equal weight).",
+  "dataset_rows": 920,
+  "test_rows": 184,
+  "source_target": "num"
+}

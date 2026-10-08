@@ -1,0 +1,57 @@
+Model,Feature,Importance
+Random Forest,numeric__age,0.11852638907590932
+Random Forest,numeric__thalach,0.1147604316658822
+Random Forest,numeric__chol,0.10293946919485898
+Random Forest,categorical__cp_asymptomatic,0.09566012171264403
+Random Forest,numeric__oldpeak,0.088443191926548
+Random Forest,numeric__trestbps,0.07435147106652557
+Random Forest,categorical__exang_1.0,0.058739342103547566
+Random Forest,categorical__exang_0.0,0.05445679286378048
+Random Forest,categorical__cp_atypical angina,0.04177197820814815
+Random Forest,categorical__thal_normal,0.0275870061989662
+Random Forest,categorical__sex_Female,0.025905838694652236
+Random Forest,categorical__sex_Male,0.025242291476291097
+Random Forest,categorical__thal_reversable defect,0.01644035891225549
+Random Forest,categorical__cp_non-anginal,0.016083428428670502
+Random Forest,categorical__restecg_normal,0.015588394277217447
+Random Forest,categorical__restecg_st-t abnormality,0.014702819202238246
+Random Forest,categorical__slope_flat,0.013955702173213654
+Random Forest,categorical__slope_upsloping,0.01361069697000106
+Random Forest,categorical__ca_0.0,0.013234677179584656
+Random Forest,categorical__fbs_0.0,0.011938629664019474
+Random Forest,categorical__fbs_1.0,0.011245627889537748
+Random Forest,categorical__restecg_lv hypertrophy,0.010678333576902331
+Random Forest,categorical__cp_typical angina,0.008839808321257239
+Random Forest,categorical__ca_1.0,0.00676537518761751
+Random Forest,categorical__slope_downsloping,0.0065167433849358586
+Random Forest,categorical__thal_fixed defect,0.004527862145878713
+Random Forest,categorical__ca_2.0,0.004453505287043656
+Random Forest,categorical__ca_3.0,0.003033713211872413
+XGBoost,categorical__cp_asymptomatic,0.21942023932933807
+XGBoost,categorical__exang_0.0,0.12181677669286728
+XGBoost,categorical__cp_atypical angina,0.05177614465355873
+XGBoost,categorical__sex_Female,0.0446678064763546
+XGBoost,categorical__sex_Male,0.04415832832455635
+XGBoost,categorical__thal_normal,0.042597830295562744
+XGBoost,categorical__thal_fixed defect,0.0374944843351841
+XGBoost,numeric__oldpeak,0.0326213501393795
+XGBoost,categorical__ca_0.0,0.03089054487645626
+XGBoost,categorical__thal_reversable defect,0.030059095472097397
+XGBoost,numeric__age,0.02705034427344799
+XGBoost,categorical__restecg_st-t abnormality,0.02687658928334713
+XGBoost,categorical__cp_typical angina,0.026052625849843025
+XGBoost,numeric__thalach,0.025560902431607246
+XGBoost,categorical__slope_flat,0.02463495172560215
+XGBoost,categorical__fbs_1.0,0.021840689703822136
+XGBoost,categorical__cp_non-anginal,0.021398797631263733
+XGBoost,numeric__chol,0.02082441933453083
+XGBoost,categorical__ca_1.0,0.020342564210295677
+XGBoost,categorical__slope_upsloping,0.020201239734888077
+XGBoost,numeric__trestbps,0.017442302778363228
+XGBoost,categorical__fbs_0.0,0.01735713705420494
+XGBoost,categorical__exang_1.0,0.016468219459056854
+XGBoost,categorical__restecg_normal,0.015846580266952515
+XGBoost,categorical__restecg_lv hypertrophy,0.014732546173036098
+XGBoost,categorical__slope_downsloping,0.014251417480409145
+XGBoost,categorical__ca_2.0,0.013616018928587437
+XGBoost,categorical__ca_3.0,0.0
