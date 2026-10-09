@@ -67,7 +67,7 @@ def evaluate(model, X_test, y_test):
 
 def write_figures(results, y_test):
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
-    fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+    fig, axes = plt.subplots(3, 1, figsize=(12, 12))
     for ax, (name, result) in zip(axes, results.items()):
         matrix = np.asarray(result["confusion_matrix"])
         ConfusionMatrixDisplay(matrix, display_labels=[0, 1]).plot(
@@ -82,7 +82,7 @@ def write_figures(results, y_test):
     fig.savefig(PLOT_DIR / "confusion_matrices.png", dpi=160)
     plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(11, 11))
     for name, result in results.items():
         fpr, tpr, _ = roc_curve(y_test, result["y_score"])
         ax.plot(fpr, tpr, label=f"{name} (AUC {result['ROC-AUC']:.3f})")
@@ -91,7 +91,7 @@ def write_figures(results, y_test):
     ax.legend(loc="lower right"); ax.grid(alpha=.2); fig.tight_layout()
     fig.savefig(PLOT_DIR / "roc_curves.png", dpi=160); plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(11, 11))
     for name, result in results.items():
         precision, recall, _ = precision_recall_curve(y_test, result["y_score"])
         ax.plot(recall, precision, label=name)
@@ -111,7 +111,7 @@ def write_feature_importance(models, raw_columns):
             rows.append({"Model": label, "Feature": feature, "Importance": float(importance)})
     table = pd.DataFrame(rows).sort_values(["Model", "Importance"], ascending=[True, False])
     table.to_csv(REPORT_DIR / "feature_importance.csv", index=False)
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+    fig, axes = plt.subplots(2, 1, figsize=(12, 12))
     for ax, label in zip(axes, ("Random Forest", "XGBoost")):
         top = table[table.Model == label].nlargest(12, "Importance").sort_values("Importance")
         ax.barh(top.Feature.str.replace(r"^(numeric|categorical)__", "", regex=True), top.Importance)

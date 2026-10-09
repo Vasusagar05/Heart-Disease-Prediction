@@ -6,10 +6,6 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "heart.csv"
@@ -111,6 +107,13 @@ def validate_and_split(frame: pd.DataFrame, target: str):
 
 def make_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
     """Infer numeric/categorical columns from training data and fit only in a Pipeline."""
+    # Import scikit-learn only when training builds a pipeline. The Streamlit
+    # dashboard can load its reports without importing training-only modules.
+    from sklearn.compose import ColumnTransformer
+    from sklearn.impute import SimpleImputer
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
     categorical = [column for column in X.columns if column in KNOWN_CATEGORICAL]
     numeric = [column for column in X.columns if column not in categorical and
                pd.api.types.is_numeric_dtype(X[column])]

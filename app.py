@@ -58,6 +58,13 @@ if submitted:
             st.success("No Heart Disease Detected by this model")
         st.metric("Model estimated probability for class 1", f"{result['probability']:.1%}")
         st.caption(f"Model used: {result['model']}. This probability is a model output, not a clinical risk estimate.")
+    except ImportError as error:
+        st.error(
+            "Windows blocked a compiled scikit-learn file needed to load the model. "
+            "The analytics dashboard can still be viewed, but prediction requires "
+            "an approved Python environment or an administrator to allow the blocked file."
+        )
+        st.caption(str(error))
     except (FileNotFoundError, ValueError, KeyError) as error:
         st.error(str(error))
 
@@ -77,7 +84,8 @@ if report:
     for filename, caption in [("confusion_matrices.png", "Confusion matrices"), ("roc_curves.png", "ROC curves"), ("precision_recall_curves.png", "Precision-recall curves"), ("feature_importance.png", "Tree model feature importance")]:
         plot = ROOT / "reports" / "figures" / filename
         if plot.exists():
-            st.image(str(plot), caption=caption, use_container_width=True)
+            image_width = 1100 if filename in {"roc_curves.png", "precision_recall_curves.png"} else 1200
+            st.image(str(plot), caption=caption, width=image_width)
 else:
     st.info("Train the models with `python src/train.py` to create the comparison table and analytics charts.")
 
